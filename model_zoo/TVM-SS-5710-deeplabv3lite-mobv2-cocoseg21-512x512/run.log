@@ -1,0 +1,1198 @@
+[34m
+INFO:[33m20250516-135957: starting - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[34m
+INFO:[33m20250516-135957: running - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[34m
+INFO:[33m20250516-135957: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'cocoseg21', 'calibration_dataset': <edgeai_benchmark.datasets.coco_seg.COCOSegmentation object at 0x7b46563037f0>, 'input_dataset': <edgeai_benchmark.datasets.coco_seg.COCOSegmentation object at 0x7b46563f37f0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563db310>, 'session': <edgeai_benchmark.sessions.tvmdlr_session.TVMDLRSession object at 0x7b46563db370>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a1ff0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 57.77}, 'model_shortlist': 10, 'compact_name': 'deeplabv3lite-mobv2-cocoseg21-512x512', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-135957: import 13/16 - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx - this may take some time...
+[34mINFO:[33m20250516-135957: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+[34mINFO:[33m20250516-135957: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx/model/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+[34mINFO:[33m20250516-135957: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx/model/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_qparams.prototxt
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+Converted model is valid!
+Generating subgraph boundary tensors for calibration...
+Building graph on host for tensor data collection...
+For x86 target, depthwise_conv2d with channel multiplier greater than 1 is not optimized
+For x86 target, depthwise_conv2d with channel multiplier greater than 1 is not optimized
+For x86 target, depthwise_conv2d with channel multiplier greater than 1 is not optimized
+[14:01:30] /root/tvm/src/te/schedule/bound.cc:119: not in feed graph consumer = compute(p0_red_temp, body=[T.reduce(T.comm_reducer(lambda argmax_lhs_0, argmax_lhs_1, argmax_rhs_0, argmax_rhs_1: (T.Select(argmax_lhs_1 > argmax_rhs_1 or argmax_lhs_1 == argmax_rhs_1 and argmax_lhs_0 < argmax_rhs_0, argmax_lhs_0, argmax_rhs_0), T.Select(argmax_lhs_1 > argmax_rhs_1, argmax_lhs_1, argmax_rhs_1)), [-1, T.float32(-3.4028234663852886e+38)]), source=[k1, p0[ax0, k1, ax2, ax3]], init=[], axis=[T.iter_var(k1, T.Range(0, 21), "CommReduce", "")], condition=T.bool(True), value_index=0), T.reduce(T.comm_reducer(lambda argmax_lhs_0, argmax_lhs_1, argmax_rhs_0, argmax_rhs_1: (T.Select(argmax_lhs_1 > argmax_rhs_1 or argmax_lhs_1 == argmax_rhs_1 and argmax_lhs_0 < argmax_rhs_0, argmax_lhs_0, argmax_rhs_0), T.Select(argmax_lhs_1 > argmax_rhs_1, argmax_lhs_1, argmax_rhs_1)), [-1, T.float32(-3.4028234663852886e+38)]), source=[k1, p0[ax0, k1, ax2, ax3]], init=[], axis=[T.iter_var(k1, T.Range(0, 21), "CommReduce", "")], condition=T.bool(True), value_index=1)], axis=[T.iter_var(ax0, T.Range(0, 1), "DataPar", ""), T.iter_var(ax1, T.Range(0, 1), "DataPar", ""), T.iter_var(ax2, T.Range(0, 512), "DataPar", ""), T.iter_var(ax3, T.Range(0, 512), "DataPar", "")], reduce_axis=[T.iter_var(k1, T.Range(0, 21), "CommReduce", "")], tag=comm_reduce_idx, attrs={})
+Running graph on host for tensor data collection...
+Importing subgraph into TIDL...
+[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+TIDL import of 1 Relay IR subgraphs succeeded.
+TIDL artifacts are stored at /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx/artifacts
+[34m
+INFO:[33m20250516-140457: import completed 13/16 - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx - 301 sec
+[32m
+
+SUCCESS:[33m20250516-140458: benchmark results - [39m{}
+
+[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
+----------------------------- Optimization Summary -----------------------------
+--------------------------------------------------------------------------------
+|         Layer         | Nodes before optimization | Nodes after optimization |
+--------------------------------------------------------------------------------
+| TIDL_ArgMaxLayer      |                         1 |                        1 |
+| TIDL_EltWiseLayer     |                        10 |                       10 |
+| TIDL_ResizeLayer      |                         2 |                        2 |
+| TIDL_ConvolutionLayer |                        62 |                       62 |
+| TIDL_BatchNormLayer   |                        62 |                        [32;1m0[0m |
+| TIDL_ConcatLayer      |                         2 |                        2 |
+| TIDL_ReLULayer        |                        43 |                        [32;1m0[0m |
+| TIDL_BiasLayer        |                         1 |                        [32;1m0[0m |
+| TIDL_LeakyReluLayer   |                         3 |                        [32;1m0[0m |
+--------------------------------------------------------------------------------
+
+[33m[TIDL Import]  WARNING: Raw data format used is same as inElementType 0, as it was not provided by user [0m
+
+-------- Running Calibration in Float Mode to Collect Tensor Statistics --------
+
+
+----------------- Fixed-point Calibration Iteration [1 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [2 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [3 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [4 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [5 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [6 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [7 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [8 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [9 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [10 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [11 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [12 / 12]: -----------------
+
+
+[35;1m==================== [Quantization & Calibration Completed] ====================
+
+[0m[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0mRerunning network compiler...
+[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0m[34;1m[TIDL Import] [PARSER] INFORMATION: TIDL_ResizeLayer tidl_0_532: Any resize ratio which is power of 2 and greater than 4 will be placed by combination of 4x4 resize layer and 2x2 resize layer. For example a 8x8 resize will be replaced by 4x4 resize followed by 2x2 resize -- [tidl_import_common_model_check.cpp, 1480]
+[0m[34;1m[TIDL Import] [PARSER] INFORMATION: TIDL_ResizeLayer tidl_0_554: Any resize ratio which is power of 2 and greater than 4 will be placed by combination of 4x4 resize layer and 2x2 resize layer. For example a 8x8 resize will be replaced by 4x4 resize followed by 2x2 resize -- [tidl_import_common_model_check.cpp, 1480]
+[0m
+[33;1m============== Subgraph Compiled with   2 Warnings and   0 Errors ==============
+
+[0m
+[34m
+INFO:[33m20250516-140459: starting - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[34m
+INFO:[33m20250516-140459: running - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[34m
+INFO:[33m20250516-140459: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'cocoseg21', 'calibration_dataset': <edgeai_benchmark.datasets.coco_seg.COCOSegmentation object at 0x7b46563037f0>, 'input_dataset': <edgeai_benchmark.datasets.coco_seg.COCOSegmentation object at 0x7b46563f37f0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563db310>, 'session': <edgeai_benchmark.sessions.tvmdlr_session.TVMDLRSession object at 0x7b46563db370>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a1ff0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 57.77}, 'model_shortlist': 10, 'compact_name': 'deeplabv3lite-mobv2-cocoseg21-512x512', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-140459: infer 13/16 - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx - this may take some time...
+[34mINFO:[33m20250516-140459: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/cocoseg21/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+[34mINFO:[33m20250516-140459: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx/model/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405.onnx
+[34mINFO:[33m20250516-140459: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx/model/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_qparams.prototxt
+2025-05-16 14:04:59,213 INFO Could not find libdlr.so in model artifact. Using dlr from /home/a0393608local/.pyenv/versions/benchmark/lib/python3.10/site-packages/dlr/libdlr.so
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|   0%|          || 0/1000 [00:00<?, ?it/s]infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|          |     0% 0/1000| [< ]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|   2%|▎         || 25/1000 [00:10<06:36,  2.46it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|   5%|▌         || 51/1000 [00:20<06:18,  2.51it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|   8%|▊         || 77/1000 [00:30<06:09,  2.50it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  10%|█         || 103/1000 [00:41<05:58,  2.50it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  13%|█▎        || 129/1000 [00:51<05:46,  2.51it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  16%|█▌        || 155/1000 [01:01<05:36,  2.51it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  18%|█▊        || 181/1000 [01:12<05:24,  2.52it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  21%|██        || 207/1000 [01:22<05:12,  2.54it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  23%|██▎       || 233/1000 [01:32<05:02,  2.53it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  26%|██▌       || 259/1000 [01:42<04:50,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  28%|██▊       || 285/1000 [01:52<04:40,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  31%|███       || 311/1000 [02:02<04:29,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  34%|███▎      || 337/1000 [02:13<04:19,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  36%|███▋      || 363/1000 [02:23<04:10,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  39%|███▉      || 389/1000 [02:33<04:00,  2.54it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  42%|████▏     || 415/1000 [02:43<03:48,  2.56it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  44%|████▍     || 441/1000 [02:53<03:37,  2.57it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  47%|████▋     || 467/1000 [03:03<03:28,  2.56it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  49%|████▉     || 493/1000 [03:14<03:18,  2.56it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  52%|█████▏    || 519/1000 [03:24<03:08,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  55%|█████▍    || 545/1000 [03:34<02:59,  2.54it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  57%|█████▋    || 571/1000 [03:44<02:49,  2.54it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  60%|█████▉    || 597/1000 [03:55<02:38,  2.54it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  62%|██████▏   || 623/1000 [04:05<02:27,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  65%|██████▍   || 649/1000 [04:15<02:17,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  68%|██████▊   || 675/1000 [04:25<02:07,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  70%|███████   || 701/1000 [04:35<01:57,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  73%|███████▎  || 727/1000 [04:45<01:46,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  75%|███████▌  || 753/1000 [04:56<01:36,  2.56it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  78%|███████▊  || 779/1000 [05:06<01:26,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  80%|████████  || 805/1000 [05:16<01:16,  2.55it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  83%|████████▎ || 832/1000 [05:26<01:05,  2.57it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  86%|████████▌ || 859/1000 [05:37<00:54,  2.58it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  89%|████████▊ || 886/1000 [05:47<00:44,  2.59it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  91%|█████████▏|| 913/1000 [05:58<00:33,  2.59it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  94%|█████████▍|| 939/1000 [06:08<00:23,  2.59it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  96%|█████████▋|| 965/1000 [06:18<00:13,  2.59it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu|  99%|█████████▉|| 992/1000 [06:28<00:03,  2.59it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 13/16: ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plu| 100%|██████████|| 1000/1000 [06:31<00:00,  2.55it/s]
+[34m
+INFO:[33m20250516-141131: infer completed 13/16 - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx - 393 sec
+[32m
+
+SUCCESS:[33m20250516-141138: benchmark results - [39m{'infer_path': 'ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx', 'accuracy_mean_iou%': 55.972224, 'num_subgraphs': 1}
+
+The soft limit is 10240
+The hard limit is 10240
+MEM: Init ... !!!
+MEM: Init ... Done !!!
+ 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
+ 0.4s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
+ 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
+ 0.113s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
+ 0.131s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
+ 0.1108s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
+ 0.1126s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
+ 0.1144s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
+ 0.1167s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
+ 0.1203s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
+ 0.1237s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
+ 0.1262s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
+ 0.1284s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
+ 0.1307s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
+ 0.1329s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
+ 0.1359s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
+ 0.1381s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
+ 0.1414s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
+ 0.1440s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
+ 0.1467s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
+ 0.1490s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
+ 0.1516s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
+ 0.1540s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
+ 0.1563s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
+ 0.1585s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
+ 0.1617s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
+ 0.1639s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
+ 0.1662s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
+ 0.1686s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
+ 0.1711s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
+ 0.1746s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
+ 0.1766s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
+ 0.1793s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
+ 0.1814s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
+ 0.1836s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
+ 0.1858s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
+ 0.1883s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
+ 0.1906s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
+ 0.1929s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
+ 0.1953s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
+ 0.1978s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
+ 0.2006s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
+ 0.2007s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
+ 0.2008s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
+MEM: Deinit ... !!!
+MEM: Alloc's: 26 alloc's of 84875579 bytes 
+MEM: Free's : 26 free's  of 84875579 bytes 
+MEM: Open's : 0 allocs  of 0 bytes 
+MEM: Deinit ... Done !!!
+[34m
+INFO:[33m20250516-151148: starting - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[32m
+SUCCESS:[33m20250516-151148: found results - [39m{'infer_path': 'ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx', 'accuracy_mean_iou%': 55.972224, 'num_subgraphs': 1}
+
+[34m
+INFO:[33m20250516-151148: starting - [39mss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx
+[32m
+SUCCESS:[33m20250516-151148: found results - [39m{'infer_path': 'ss-5710_tvmdlr_cocoseg21_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210405_onnx', 'accuracy_mean_iou%': 55.972224, 'num_subgraphs': 1}
+

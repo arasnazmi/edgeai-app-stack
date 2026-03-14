@@ -1,0 +1,1189 @@
+[34m
+INFO:[33m20250516-135856: starting - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[34m
+INFO:[33m20250516-135856: running - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[34m
+INFO:[33m20250516-135856: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b465636a7a0>, 'session': <edgeai_benchmark.sessions.tvmdlr_session.TVMDLRSession object at 0x7b465636a800>, 'model_info': {'metric_reference': {'accuracy_top1%': 71.88}, 'model_shortlist': 10, 'compact_name': 'mobileNetV2-tv', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-135857: import 3/16 - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx - this may take some time...
+[34mINFO:[33m20250516-135857: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+[34mINFO:[33m20250516-135857: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx/model/mobilenet_v2_tv.onnx
+[34mINFO:[33m20250516-135857: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx/model/mobilenet_v2_tv_qparams.prototxt
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+Converted model is valid!
+Generating subgraph boundary tensors for calibration...
+Building graph on host for tensor data collection...
+Running graph on host for tensor data collection...
+Importing subgraph into TIDL...
+[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+TIDL import of 1 Relay IR subgraphs succeeded.
+TIDL artifacts are stored at /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx/artifacts
+[34m
+INFO:[33m20250516-140012: import completed 3/16 - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx - 75 sec
+[32m
+
+SUCCESS:[33m20250516-140012: benchmark results - [39m{}
+
+----------------------------- Optimization Summary -----------------------------
+---------------------------------------------------------------------------------
+|          Layer         | Nodes before optimization | Nodes after optimization |
+---------------------------------------------------------------------------------
+| TIDL_InnerProductLayer |                         1 |                        1 |
+| TIDL_EltWiseLayer      |                        10 |                       10 |
+| TIDL_FlattenLayer      |                         1 |                        [32;1m0[0m |
+| TIDL_ConvolutionLayer  |                        52 |                       52 |
+| TIDL_BatchNormLayer    |                         1 |                        [32;1m0[0m |
+| TIDL_ReLULayer         |                        35 |                        [32;1m0[0m |
+| TIDL_BiasLayer         |                        54 |                        [32;1m0[0m |
+| TIDL_PoolingLayer      |                         1 |                        1 |
+| TIDL_LeakyReluLayer    |                         1 |                        [32;1m0[0m |
+---------------------------------------------------------------------------------
+
+[33m[TIDL Import]  WARNING: Raw data format used is same as inElementType 0, as it was not provided by user [0m
+
+-------- Running Calibration in Float Mode to Collect Tensor Statistics --------
+
+
+----------------- Fixed-point Calibration Iteration [1 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [2 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [3 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [4 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [5 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [6 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [7 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [8 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [9 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [10 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [11 / 12]: -----------------
+
+
+----------------- Fixed-point Calibration Iteration [12 / 12]: -----------------
+
+
+[35;1m==================== [Quantization & Calibration Completed] ====================
+
+[0m[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0mRerunning network compiler...
+[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0m[32;1m======================== Subgraph Compiled Successfully ========================
+
+[0m[34m
+INFO:[33m20250516-140013: starting - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[34m
+INFO:[33m20250516-140013: running - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[34m
+INFO:[33m20250516-140013: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b465636a7a0>, 'session': <edgeai_benchmark.sessions.tvmdlr_session.TVMDLRSession object at 0x7b465636a800>, 'model_info': {'metric_reference': {'accuracy_top1%': 71.88}, 'model_shortlist': 10, 'compact_name': 'mobileNetV2-tv', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-140014: infer 3/16 - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx - this may take some time...
+[34mINFO:[33m20250516-140014: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/torchvision/mobilenet_v2_tv.onnx
+[34mINFO:[33m20250516-140014: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx/model/mobilenet_v2_tv.onnx
+[34mINFO:[33m20250516-140014: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx/model/mobilenet_v2_tv_qparams.prototxt
+2025-05-16 14:00:14,536 INFO Could not find libdlr.so in model artifact. Using dlr from /home/a0393608local/.pyenv/versions/benchmark/lib/python3.10/site-packages/dlr/libdlr.so
+infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_|   0%|          || 0/1000 [00:00<?, ?it/s]infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_|          |     0% 0/1000| [< ]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_|  30%|███       || 302/1000 [00:10<00:23, 30.12it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_|  60%|██████    || 604/1000 [00:22<00:14, 26.70it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_|  87%|████████▋ || 867/1000 [00:32<00:05, 26.51it/s]WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+WARNING: perfsim stats could not be obtained: list index out of range
+infer 3/16: cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_| 100%|██████████|| 1000/1000 [00:37<00:00, 26.98it/s]
+[34m
+INFO:[33m20250516-140053: infer completed 3/16 - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx - 39 sec
+[32m
+
+SUCCESS:[33m20250516-140053: benchmark results - [39m{'infer_path': 'cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx', 'accuracy_top1%': 72.5, 'num_subgraphs': 1}
+
+The soft limit is 10240
+The hard limit is 10240
+MEM: Init ... !!!
+MEM: Init ... Done !!!
+ 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
+ 0.7s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
+ 0.8s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
+ 0.160s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
+ 0.231s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
+ 0.1501s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
+ 0.1523s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
+ 0.1557s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
+ 0.1583s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
+ 0.1636s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
+ 0.1686s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
+ 0.1726s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
+ 0.1760s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
+ 0.1799s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
+ 0.1832s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
+ 0.1870s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
+ 0.1904s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
+ 0.1950s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
+ 0.1982s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
+ 0.2019s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
+ 0.2048s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
+ 0.2088s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
+ 0.2120s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
+ 0.2151s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
+ 0.2177s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
+ 0.2221s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
+ 0.2250s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
+ 0.2286s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
+ 0.2319s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
+ 0.2359s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
+ 0.2400s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
+ 0.2435s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
+ 0.2463s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
+ 0.2495s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
+ 0.2523s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
+ 0.2562s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
+ 0.2594s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
+ 0.2636s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
+ 0.2695s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
+ 0.2737s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
+ 0.2776s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
+ 0.2818s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
+ 0.2819s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
+ 0.2820s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
+MEM: Deinit ... !!!
+MEM: Alloc's: 26 alloc's of 32686581 bytes 
+MEM: Free's : 26 free's  of 32686581 bytes 
+MEM: Open's : 0 allocs  of 0 bytes 
+MEM: Deinit ... Done !!!
+[34m
+INFO:[33m20250516-151142: starting - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[32m
+SUCCESS:[33m20250516-151142: found results - [39m{'infer_path': 'cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx', 'accuracy_top1%': 72.5, 'num_subgraphs': 1}
+
+[34m
+INFO:[33m20250516-151143: starting - [39mcl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx
+[32m
+SUCCESS:[33m20250516-151143: found results - [39m{'infer_path': 'cl-3090_tvmdlr_imagenet1k_torchvision_mobilenet_v2_tv_onnx', 'accuracy_top1%': 72.5, 'num_subgraphs': 1}
+

@@ -1,0 +1,326 @@
+[34m
+INFO:[33m20250516-135856: starting - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[34m
+INFO:[33m20250516-135856: running - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[34m
+INFO:[33m20250516-135856: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b4657bddae0>, 'session': <edgeai_benchmark.sessions.tflitert_session.TFLiteRTSession object at 0x7b4657bdda50>, 'metric': {'label_offset_pred': -1}, 'model_info': {'metric_reference': {'accuracy_top1%': 71.676}, 'model_shortlist': 10, 'compact_name': 'mobileNetV1-mlperf', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-135856: import 2/16 - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite - this may take some time...
+[34mINFO:[33m20250516-135856: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+[34mINFO:[33m20250516-135856: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224.tflite
+[34mINFO:[33m20250516-135856: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224_qparams.prototxt
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224.tflite
+[35;1m========================= [Model Compilation Started] =========================
+
+[0mModel compilation will perform the following stages:
+1. Parsing
+2. Graph Optimization
+3. Quantization & Calibration
+4. Memory Planning
+
+[35;1m============================== [Version Summary] ==============================
+
+[0m-------------------------------------------------------------------------------
+|          TIDL Tools Version          |              [32;1m11_00_00_00[0m             |
+-------------------------------------------------------------------------------
+|         C7x Firmware Version         |              [32;1m11_00_00_00[0m             |
+-------------------------------------------------------------------------------
+
+[35;1m============================== [Parsing Started] ==============================
+
+[0m[33m[TIDL Import] [PARSER] WARNING: Network not identified as Object Detection network : (1) Ignore if network is not Object Detection network (2) If network is Object Detection network, please specify "model_type":"OD" as part of OSRT compilation options[0m
+
+Total Nodes = 34
+-------------------------------------------------------------------------------
+|          Core           |      No. of Nodes       |   Number of Subgraphs   |
+-------------------------------------------------------------------------------
+| C7x                     |                      34 |                       1 |
+| CPU                     |                       0 |                       x |
+-------------------------------------------------------------------------------
+[35;1m============================= [Parsing Completed] =============================
+
+[0m[35;1m==================== [Optimization for subgraph_87 started] ====================
+
+[0m[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
+----------------------------- Optimization Summary -----------------------------
+---------------------------------------------------------------------------------
+|          Layer         | Nodes before optimization | Nodes after optimization |
+---------------------------------------------------------------------------------
+| TIDL_InnerProductLayer |                         0 |                        1 |
+| TIDL_BatchNormLayer    |                         0 |                        1 |
+| TIDL_SoftMaxLayer      |                         1 |                        1 |
+| TIDL_ConvolutionLayer  |                        28 |                       [32;1m27[0m |
+| TIDL_EltWiseLayer      |                         2 |                        [32;1m0[0m |
+| TIDL_PatchMergeLayer   |                         1 |                        [32;1m0[0m |
+| TIDL_PoolingLayer      |                         1 |                        1 |
+---------------------------------------------------------------------------------
+
+[35;1m=================== [Optimization for subgraph_87 completed] ===================
+
+[0mThe soft limit is 10240
+The hard limit is 10240
+MEM: Init ... !!!
+MEM: Init ... Done !!!
+ 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
+ 0.7s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
+ 0.8s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
+ 0.1912s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
+ 0.1937s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
+ 0.3174s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
+ 0.3218s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
+ 0.3274s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
+ 0.3307s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
+ 0.3331s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
+ 0.3374s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
+ 0.3402s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
+ 0.3430s:  [======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
+ 0.3500s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
+ 0.3528s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
+ 0.3559s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
+ 0.3587s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
+ 0.3622s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
+ 0.3651s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
+ 0.3684s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
+ 0.3721s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
+ 0.3743s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
+ 0.3772s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
+ 0.3804s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
+ 0.3826s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
+ 0.3857s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
+ 0.3881s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
+ 0.3913s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
+ 0.3939s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
+ 0.3965s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
+ 0.3996s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
+ 0.4028s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
+ 0.4054s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
+ 0.4082s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
+ 0.4104s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
+ 0.4134s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
+ 0.4156s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
+ 0.4195s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
+ 0.4230s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
+ 0.4257s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
+ 0.4285s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
+ 0.4316s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
+ 0.4317s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
+ 0.4317s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
+
+ ************ Frame index 1 : Running float inference **************** 
+
+
+ ************ Frame index 2 : Running float inference **************** 
+
+
+ ************ Frame index 3 : Running float inference **************** 
+
+
+ ************ Frame index 4 : Running float inference **************** 
+
+
+ ************ Frame index 5 : Running float inference **************** 
+
+
+ ************ Frame index 6 : Running float inference **************** 
+
+
+ ************ Frame index 7 : Running float inference **************** 
+
+
+ ************ Frame index 8 : Running float inference **************** 
+
+
+ ************ Frame index 9 : Running float inference **************** 
+
+
+ ************ Frame index 10 : Running float inference **************** 
+
+
+ ************ Frame index 11 : Running float inference **************** 
+
+
+ ************ Frame index 12 : Running fixed point mode for calibration **************** 
+
+[33m[TIDL Import] [QUANTIZATION] WARNING: Could not open /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224_qparams.prototxt for importing mixed precision info.
+This will be generated after model compilation.[0m
+Parameters unavailable, running calibration
+
+-------- Running Calibration in Float Mode to Collect Tensor Statistics --------
+
+
+----------------- Fixed-point Calibration Iteration [1 / 12]: -----------------
+Parameters unav[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+------------------------- Network Compiler Traces ------------------------------
+Successful Memory Allocation
+Successful Workload Creation
+[34m
+INFO:[33m20250516-135921: import completed 2/16 - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite - 25 sec
+[32m
+
+SUCCESS:[33m20250516-135921: benchmark results - [39m{}
+
+ailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [2 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [3 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [4 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [5 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [6 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [7 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [8 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [9 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [10 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [11 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+----------------- Fixed-point Calibration Iteration [12 / 12]: -----------------
+Parameters unavailable, running calibration
+
+
+Parameters unavailable, running calibration
+Output network quant params prototxt file path: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/artifacts/tempDir/87_tidl_net_quant_params.prototxt
+Calibrated quant parameters stored in protoTxt format
+[35;1m==================== [Quantization & Calibration Completed] ====================
+
+[0m[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0mRerunning network compiler...
+[35;1m========================== [Memory Planning Started] ==========================
+
+[0m
+
+[35;1m========================= [Memory Planning Completed] =========================
+
+[0m[32;1m======================== Subgraph Compiled Successfully ========================
+
+[0m
+ Final number of subgraphs:1 , 34 nodes delegated to accelerator 
+
+MEM: Deinit ... !!!
+MEM: Alloc's: 26 alloc's of 85088385 bytes 
+MEM: Free's : 26 free's  of 85088385 bytes 
+MEM: Open's : 0 allocs  of 0 bytes 
+MEM: Deinit ... Done !!!
+[34m
+INFO:[33m20250516-135924: starting - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[34m
+INFO:[33m20250516-135924: running - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[34m
+INFO:[33m20250516-135924: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b4657bddae0>, 'session': <edgeai_benchmark.sessions.tflitert_session.TFLiteRTSession object at 0x7b4657bdda50>, 'metric': {'label_offset_pred': -1}, 'model_info': {'metric_reference': {'accuracy_top1%': 71.676}, 'model_shortlist': 10, 'compact_name': 'mobileNetV1-mlperf', 'shortlisted': True, 'recommended': True}}
+[34m
+INFO:[33m20250516-135925: infer 2/16 - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite - this may take some time...
+[34mINFO:[33m20250516-135925: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite
+[34mINFO:[33m20250516-135925: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224.tflite
+[34mINFO:[33m20250516-135925: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite/model/mobilenet_v1_1.0_224_qparams.prototxt
+infer 2/16: cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_|   0%|          || 0/1000 [00:00<?, ?it/s]infer 2/16: cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_|          |     0% 0/1000| [< ]infer 2/16: cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_|  35%|███▌      || 350/1000 [00:10<00:18, 34.93it/s]infer 2/16: cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_|  70%|███████   || 700/1000 [00:20<00:08, 34.55it/s]infer 2/16: cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_| 100%|██████████|| 1000/1000 [00:28<00:00, 34.94it/s]
+[34m
+INFO:[33m20250516-135955: infer completed 2/16 - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite - 30 sec
+[32m
+
+SUCCESS:[33m20250516-135955: benchmark results - [39m{'infer_path': 'cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite', 'accuracy_top1%': 71.4, 'num_subgraphs': 1, 'perfsim_time_ms': 2.08026, 'perfsim_ddr_transfer_mb': 4.28, 'perfsim_gmacs': 0.5692}
+
+
+ Number of subgraphs:1 , 34 nodes delegated out of 34 nodes 
+ 
+The soft limit is 10240
+The hard limit is 10240
+MEM: Init ... !!!
+MEM: Init ... Done !!!
+ 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
+ 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
+ 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
+ 0.115s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
+ 0.133s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
+ 0.1084s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
+ 0.1123s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
+ 0.1154s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
+ 0.1183s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
+ 0.1210s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
+ 0.1267s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
+ 0.1299s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
+ 0.1325s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
+ 0.1354s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
+ 0.1383s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
+ 0.1410s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
+ 0.1444s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
+ 0.1478s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
+ 0.1505s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
+ 0.1534s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
+ 0.1564s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
+ 0.1594s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
+ 0.1624s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
+ 0.1653s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
+ 0.1680s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
+ 0.1713s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
+ 0.1738s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
+ 0.1774s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
+ 0.1802s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
+ 0.1836s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
+ 0.1872s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
+ 0.1900s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
+ 0.1931s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
+ 0.1962s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
+ 0.1999s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
+ 0.2028s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
+ 0.2057s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
+ 0.2085s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
+ 0.2113s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
+ 0.2142s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
+ 0.2175s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
+ 0.2211s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
+ 0.2213s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
+ 0.2214s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
+MEM: Deinit ... !!!
+MEM: Alloc's: 26 alloc's of 31076820 bytes 
+MEM: Free's : 26 free's  of 31076820 bytes 
+MEM: Open's : 0 allocs  of 0 bytes 
+MEM: Deinit ... Done !!!
+[34m
+INFO:[33m20250516-151142: starting - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[32m
+SUCCESS:[33m20250516-151142: found results - [39m{'infer_path': 'cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite', 'accuracy_top1%': 71.4, 'num_subgraphs': 1, 'perfsim_time_ms': 2.08026, 'perfsim_ddr_transfer_mb': 4.28, 'perfsim_gmacs': 0.5692}
+
+[34m
+INFO:[33m20250516-151142: starting - [39mcl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite
+[32m
+SUCCESS:[33m20250516-151142: found results - [39m{'infer_path': 'cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite', 'accuracy_top1%': 71.4, 'num_subgraphs': 1, 'perfsim_time_ms': 2.08026, 'perfsim_ddr_transfer_mb': 4.28, 'perfsim_gmacs': 0.5692}
+
