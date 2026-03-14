@@ -1,249 +1,0 @@
-[34m
-INFO:[33m20250516-135903: starting - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[34m
-INFO:[33m20250516-135903: running - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[34m
-INFO:[33m20250516-135903: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'ti-robokit_semseg_zed1hd', 'calibration_dataset': <edgeai_benchmark.datasets.robokit_seg.RobokitSegmentation object at 0x7b46563f3fa0>, 'input_dataset': <edgeai_benchmark.datasets.robokit_seg.RobokitSegmentation object at 0x7b46563f3dc0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563da6e0>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b46563da740>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563da8f0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 54.1}, 'model_shortlist': 10, 'compact_name': 'deeplabv3lite-mobv2-qat-robokit-768x432', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135903: import 11/16 - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx - this may take some time...
-[34mINFO:[33m20250516-135903: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-[34mINFO:[33m20250516-135903: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/model/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-[34mINFO:[33m20250516-135903: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/model/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_qparams.prototxt
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-[35;1m========================= [Model Compilation Started] =========================
-
-[0mModel compilation will perform the following stages:
-1. Parsing
-2. Graph Optimization
-3. Quantization & Calibration
-4. Memory Planning
-
-[35;1m============================== [Version Summary] ==============================
-
-[0m-------------------------------------------------------------------------------
-|          TIDL Tools Version          |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|         C7x Firmware Version         |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|            Runtime Version           |                [32;1m1.15.0[0m                |
--------------------------------------------------------------------------------
-|          Model Opset Version         |                  [32;1m11[0m                  |
--------------------------------------------------------------------------------
-
-[35;1m============================== [Parsing Started] ==============================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Network not identified as Object Detection network : (1) Ignore if network is not Object Detection network (2) If network is Object Detection network, please specify "model_type":"OD" as part of OSRT compilation options[0m
-
-------------------------- Subgraph Information Summary -------------------------
--------------------------------------------------------------------------------
-|          Core           |      No. of Nodes       |   Number of Subgraphs   |
--------------------------------------------------------------------------------
-| C7x                     |                     152 |                       1 |
-| CPU                     |                       0 |                       x |
--------------------------------------------------------------------------------
-[35;1m============================= [Parsing Completed] =============================
-
-[0m[35;1m==================== [Optimization for subgraph_0 Started] ====================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
------------------------------ Optimization Summary -----------------------------
---------------------------------------------------------------------------------
-|         Layer         | Nodes before optimization | Nodes after optimization |
---------------------------------------------------------------------------------
-| TIDL_ArgMaxLayer      |                         1 |                        1 |
-| TIDL_ConcatLayer      |                         2 |                        2 |
-| TIDL_EltWiseLayer     |                        10 |                       10 |
-| TIDL_ResizeLayer      |                         2 |                        2 |
-| TIDL_ConvolutionLayer |                        62 |                       62 |
-| TIDL_BatchNormLayer   |                         0 |                        1 |
-| TIDL_ShapeLayer       |                        75 |                        [32;1m0[0m |
---------------------------------------------------------------------------------
-
-[35;1m=================== [Optimization for subgraph_0 Completed] ===================
-
-[0mThe soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.6s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.8s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.169s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.192s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1350s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1400s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1435s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %169] Added target MPU-2 
- 0.1483s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1514s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1552s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1583s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1615s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1650s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1681s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1711s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1737s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1780s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1805s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1834s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1865s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1898s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1925s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1955s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1981s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.2015s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.2041s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.2085s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.2115s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.2145s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.2180s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2207s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2233s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2261s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2291s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2324s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2354s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.2384s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2410s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2438s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2469s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2508s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2510s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2511s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-[35;1m============= [Quantization & Calibration for subgraph_0 Started] =============
-
-[0m[33m[TIDL Import] [QUANTIZATION] WARNING: Could not open /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/model/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_qparams.prototxt for importing mixed precision info.
-This will be generated after model compilation.[0m
-Parameters unavailable, running calibration
-
--------- Running Calibration in Float Mode to Collect Tensor Statistics --------
-
-
------------------- Fixed-point Calibration Iteration [1 / 1]: ------------------
-Parameters unavailable, running calibration
-
-
-Parameters unavailable, running calibration
-Output network quant params prototxt file path: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/artifacts/tempDir/subgraph_0_tidl_net_quant_params.proto------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-[34m
-INFO:[33m20250516-135940: import completed 11/16 - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx - 37 sec
-[32m
-
-SUCCESS:[33m20250516-135940: benchmark results - [39m{}
-
-txt
-Calibrated quant parameters stored in protoTxt format
-[35;1m==================== [Quantization & Calibration Completed] ====================
-
-[0m[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0mRerunning network compiler...
-[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0m[32;1m======================== Subgraph Compiled Successfully ========================
-
-[0m
-
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 365780165 bytes 
-MEM: Free's : 26 free's  of 365780165 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-135940: starting - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[34m
-INFO:[33m20250516-135940: running - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[34m
-INFO:[33m20250516-135940: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'ti-robokit_semseg_zed1hd', 'calibration_dataset': <edgeai_benchmark.datasets.robokit_seg.RobokitSegmentation object at 0x7b46563f3fa0>, 'input_dataset': <edgeai_benchmark.datasets.robokit_seg.RobokitSegmentation object at 0x7b46563f3dc0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563da6e0>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b46563da740>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563da8f0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 54.1}, 'model_shortlist': 10, 'compact_name': 'deeplabv3lite-mobv2-qat-robokit-768x432', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135940: infer 11/16 - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx - this may take some time...
-[34mINFO:[33m20250516-135940: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-[34mINFO:[33m20250516-135940: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/model/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx
-[34mINFO:[33m20250516-135940: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx/model/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_qparams.prototxt
-infer 11/16: ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3pl|   0%|          || 0/49 [00:00<?, ?it/s]infer 11/16: ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3pl|          |     0% 0/49| [< ]infer 11/16: ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3pl|  37%|███▋      || 18/49 [00:10<00:18,  1.71it/s]infer 11/16: ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3pl|  73%|███████▎  || 36/49 [00:20<00:07,  1.74it/s]infer 11/16: ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3pl| 100%|██████████|| 49/49 [00:28<00:00,  1.74it/s]
-[34m
-INFO:[33m20250516-140010: infer completed 11/16 - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx - 30 sec
-[32m
-
-SUCCESS:[33m20250516-140011: benchmark results - [39m{'infer_path': 'ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx', 'accuracy_mean_iou%': 54.085984, 'num_subgraphs': 1, 'perfsim_time_ms': 25.71614, 'perfsim_ddr_transfer_mb': 104.18, 'perfsim_gmacs': 4.0467}
-
-libtidl_onnxrt_EP loaded 0x64b122d8db50 
-Final number of subgraphs created are : 1, - Offloaded Nodes - 152, Total Nodes - 152 
-The soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.7s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.151s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.204s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1214s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1267s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1296s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1332s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1355s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1385s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1409s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1490s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1524s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1559s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1589s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1624s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1677s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1715s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1747s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1788s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1829s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1888s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1926s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1973s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.2030s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.2080s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.2131s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.2179s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.2229s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.2293s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2337s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2389s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2422s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2452s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2479s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2508s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.2541s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2569s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2595s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2630s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2678s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2679s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2680s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 109333250 bytes 
-MEM: Free's : 26 free's  of 109333250 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-151147: starting - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[32m
-SUCCESS:[33m20250516-151147: found results - [39m{'infer_path': 'ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx', 'accuracy_mean_iou%': 54.085984, 'num_subgraphs': 1, 'perfsim_time_ms': 25.71614, 'perfsim_ddr_transfer_mb': 104.18, 'perfsim_gmacs': 4.0467}
-
-[34m
-INFO:[33m20250516-151147: starting - [39mss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx
-[32m
-SUCCESS:[33m20250516-151147: found results - [39m{'infer_path': 'ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx', 'accuracy_mean_iou%': 54.085984, 'num_subgraphs': 1, 'perfsim_time_ms': 25.71614, 'perfsim_ddr_transfer_mb': 104.18, 'perfsim_gmacs': 4.0467}
-

@@ -1,294 +1,0 @@
-[34m
-INFO:[33m20250516-135856: starting - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[34m
-INFO:[33m20250516-135856: running - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[34m
-INFO:[33m20250516-135856: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b4657bde530>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b4657bde4d0>, 'model_info': {'metric_reference': {'accuracy_top1%': 68.9}, 'model_shortlist': 1, 'compact_name': 'regNetx-200mf', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135856: import 1/16 - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx - this may take some time...
-[34mINFO:[33m20250516-135856: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-[34mINFO:[33m20250516-135856: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/model/regnetx-200mf.onnx
-[34mINFO:[33m20250516-135856: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/model/regnetx-200mf_qparams.prototxt
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-Converted model is valid!
-[35;1m========================= [Model Compilation Started] =========================
-
-[0mModel compilation will perform the following stages:
-1. Parsing
-2. Graph Optimization
-3. Quantization & Calibration
-4. Memory Planning
-
-[35;1m============================== [Version Summary] ==============================
-
-[0m-------------------------------------------------------------------------------
-|          TIDL Tools Version          |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|         C7x Firmware Version         |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|            Runtime Version           |                [32;1m1.15.0[0m                |
--------------------------------------------------------------------------------
-|          Model Opset Version         |                   [32;1m9[0m                  |
--------------------------------------------------------------------------------
-
-[35;1m============================== [Parsing Started] ==============================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Network not identified as Object Detection network : (1) Ignore if network is not Object Detection network (2) If network is Object Detection network, please specify "model_type":"OD" as part of OSRT compilation options[0m
-
-------------------------- Subgraph Information Summary -------------------------
--------------------------------------------------------------------------------
-|          Core           |      No. of Nodes       |   Number of Subgraphs   |
--------------------------------------------------------------------------------
-| C7x                     |                     103 |                       1 |
-| CPU                     |                       0 |                       x |
--------------------------------------------------------------------------------
-[35;1m============================= [Parsing Completed] =============================
-
-[0m[35;1m==================== [Optimization for subgraph_0 Started] ====================
-
-[0m----------------------------- Optimization Summary -----------------------------
----------------------------------------------------------------------------------
-|          Layer         | Nodes before optimization | Nodes after optimization |
----------------------------------------------------------------------------------
-| TIDL_BatchNormLayer    |                         0 |                        1 |
-| TIDL_InnerProductLayer |                         1 |                        1 |
-| TIDL_ReLULayer         |                        40 |                        [32;1m0[0m |
-| TIDL_FlattenLayer      |                         1 |                        [32;1m0[0m |
-| TIDL_ConvolutionLayer  |                        44 |                       44 |
-| TIDL_EltWiseLayer      |                        15 |                       [32;1m13[0m |
-| TIDL_PatchMergeLayer   |                         1 |                        [32;1m0[0m |
-| TIDL_PoolingLayer      |                         1 |                        1 |
----------------------------------------------------------------------------------
-
-[35;1m=================== [Optimization for subgraph_0 Completed] ===================
-
-[0mThe soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.120s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.138s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1117s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1160s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1183s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Add[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %ed target MPU-2 
- 0.1235s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1263s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1289s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1316s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1335s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1358s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1377s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1399s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1492s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1527s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1552s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1574s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1594s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1622s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1643s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1670s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1689s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.1719s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.1738s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.1765s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.1786s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.1808s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.1834s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.1857s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.1875s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.1899s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.1918s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.1938s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.1957s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.1980s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2007s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2033s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2059s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2087s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2088s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2088s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-[35;1m============= [Quantization & Calibration for subgraph_0 Started] =============
-
-[0m[33m[TIDL Import] [QUANTIZATION] WARNING: Could not open /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/model/regnetx-200mf_qparams.prototxt for importing mixed precision info.
-This will be generated after model compilation.[0m
-Parameters unavailable, running calibration
-
--------- Running Calibration in Float Mode to Collect Tensor Statistics --------
-
-
------------------ Fixed-point Calibration Iteration [1 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [2 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [3 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [4 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [5 / 12]:[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-[34m
-INFO:[33m20250516-135921: import completed 1/16 - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx - 26 sec
-[32m
-
-SUCCESS:[33m20250516-135921: benchmark results - [39m{}
-
- -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [6 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [7 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [8 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [9 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [10 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [11 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [12 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
-Parameters unavailable, running calibration
-Output network quant params prototxt file path: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/artifacts/tempDir/subgraph_0_tidl_net_quant_params.prototxt
-Calibrated quant parameters stored in protoTxt format
-[35;1m==================== [Quantization & Calibration Completed] ====================
-
-[0m[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0mRerunning network compiler...
-[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0m[32;1m======================== Subgraph Compiled Successfully ========================
-
-[0m
-
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 63097645 bytes 
-MEM: Free's : 26 free's  of 63097645 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-135923: starting - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[34m
-INFO:[33m20250516-135923: running - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[34m
-INFO:[33m20250516-135923: pipeline_config - [39m{'task_type': 'classification', 'dataset_category': 'imagenet', 'calibration_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b46b9947f40>, 'input_dataset': <edgeai_benchmark.datasets.imagenet.ImageNetCls object at 0x7b465817fb80>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b4656302dd0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b4657bde530>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b4657bde4d0>, 'model_info': {'metric_reference': {'accuracy_top1%': 68.9}, 'model_shortlist': 1, 'compact_name': 'regNetx-200mf', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135923: infer 1/16 - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx - this may take some time...
-[34mINFO:[33m20250516-135923: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx
-[34mINFO:[33m20250516-135923: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/model/regnetx-200mf.onnx
-[34mINFO:[33m20250516-135923: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx/model/regnetx-200mf_qparams.prototxt
-infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m|   0%|          || 0/1000 [00:00<?, ?it/s]infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m|          |     0% 0/1000| [< ]infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m|  28%|██▊       || 278/1000 [00:10<00:26, 27.76it/s]infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m|  59%|█████▉    || 592/1000 [00:20<00:13, 29.81it/s]infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m|  90%|█████████ || 905/1000 [00:32<00:03, 27.27it/s]infer 1/16: cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200m| 100%|██████████|| 1000/1000 [00:36<00:00, 27.62it/s]
-[34m
-INFO:[33m20250516-140001: infer completed 1/16 - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx - 37 sec
-[32m
-
-SUCCESS:[33m20250516-140001: benchmark results - [39m{'infer_path': 'cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx', 'accuracy_top1%': 69.4, 'num_subgraphs': 1, 'perfsim_time_ms': 4.49507, 'perfsim_ddr_transfer_mb': 2.82, 'perfsim_gmacs': 0.1999}
-
-libtidl_onnxrt_EP loaded 0x64b122d54ca0 
-Final number of subgraphs created are : 1, - Offloaded Nodes - 103, Total Nodes - 103 
-The soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.6s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.116s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.134s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1138s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1182s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1227s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1269s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1303s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1336s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1375s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1412s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1444s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1478s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1508s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1545s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1581s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1656s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1687s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1719s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1752s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1785s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1812s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1847s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.1880s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.1911s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.1941s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.1973s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.1999s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.2034s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2067s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2098s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2126s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2159s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2186s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2221s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.2248s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2281s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2308s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2349s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2385s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2386s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2388s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 25009584 bytes 
-MEM: Free's : 26 free's  of 25009584 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-151141: starting - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[32m
-SUCCESS:[33m20250516-151141: found results - [39m{'infer_path': 'cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx', 'accuracy_top1%': 69.4, 'num_subgraphs': 1, 'perfsim_time_ms': 4.49507, 'perfsim_ddr_transfer_mb': 2.82, 'perfsim_gmacs': 0.1999}
-
-[34m
-INFO:[33m20250516-151142: starting - [39mcl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx
-[32m
-SUCCESS:[33m20250516-151142: found results - [39m{'infer_path': 'cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx', 'accuracy_top1%': 69.4, 'num_subgraphs': 1, 'perfsim_time_ms': 4.49507, 'perfsim_ddr_transfer_mb': 2.82, 'perfsim_gmacs': 0.1999}
-

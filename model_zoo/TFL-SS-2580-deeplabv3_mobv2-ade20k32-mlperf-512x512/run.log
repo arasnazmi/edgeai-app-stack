@@ -1,328 +1,0 @@
-[34m
-INFO:[33m20250516-135904: starting - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[34m
-INFO:[33m20250516-135904: running - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[34m
-INFO:[33m20250516-135904: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'ade20k32', 'calibration_dataset': <edgeai_benchmark.datasets.ade20k.ADE20KSegmentation object at 0x7b46563f3d30>, 'input_dataset': <edgeai_benchmark.datasets.ade20k.ADE20KSegmentation object at 0x7b46563f3a00>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563daad0>, 'session': <edgeai_benchmark.sessions.tflitert_session.TFLiteRTSession object at 0x7b46563dab30>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a15a0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 54.8}, 'model_shortlist': 10, 'compact_name': 'deeplabv3_mobv2-ade20k32-mlperf-512x512', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135905: import 12/16 - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite - this may take some time...
-[34mINFO:[33m20250516-135905: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-[34mINFO:[33m20250516-135905: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float.tflite
-[34mINFO:[33m20250516-135905: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float_qparams.prototxt
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float.tflite
-[35;1m========================= [Model Compilation Started] =========================
-
-[0mModel compilation will perform the following stages:
-1. Parsing
-2. Graph Optimization
-3. Quantization & Calibration
-4. Memory Planning
-
-[35;1m============================== [Version Summary] ==============================
-
-[0m-------------------------------------------------------------------------------
-|          TIDL Tools Version          |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|         C7x Firmware Version         |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-
-[35;1m============================== [Parsing Started] ==============================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Network not identified as Object Detection network : (1) Ignore if network is not Object Detection network (2) If network is Object Detection network, please specify "model_type":"OD" as part of OSRT compilation options[0m
-[33m[TIDL Import]  WARNING: Resize layer -  with scales > 4 is not optimal[0m
-
-Total Nodes = 81
--------------------------------------------------------------------------------
-|          Core           |      No. of Nodes       |   Number of Subgraphs   |
--------------------------------------------------------------------------------
-| C7x                     |                      81 |                       1 |
-| CPU                     |                       0 |                       x |
--------------------------------------------------------------------------------
-[35;1m============================= [Parsing Completed] =============================
-
-[0m[35;1m=================== [Optimization for subgraph_201 started] ===================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
------------------------------ Optimization Summary -----------------------------
---------------------------------------------------------------------------------
-|         Layer         | Nodes before optimization | Nodes after optimization |
---------------------------------------------------------------------------------
-| TIDL_BatchNormLayer   |                         0 |                        1 |
-| TIDL_ArgMaxLayer      |                         1 |                        1 |
-| TIDL_ConcatLayer      |                         2 |                        2 |
-| TIDL_ResizeLayer      |                         3 |                        [31;1m5[0m |
-| TIDL_ConvolutionLayer |                        60 |                       60 |
-| TIDL_EltWiseLayer     |                        12 |                       [32;1m10[0m |
-| TIDL_PatchMergeLayer  |                         2 |                        [32;1m0[0m |
-| TIDL_PoolingLayer     |                         1 |                        1 |
---------------------------------------------------------------------------------
-
-[35;1m================== [Optimization for subgraph_201 completed] ==================
-
-[0mThe soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.7s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.8s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.169s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.194s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1457s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1841s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1888s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1930s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1961s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.2027s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.2101s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.2141s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.2176s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.2212s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.2247s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.2276s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.2325s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.2361s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.2395s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.2424s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.2462s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.2498s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.2539s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.2570s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.2614s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.2650s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.2687s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.2723s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.2756s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.2804s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2838s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2868s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2907s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2938s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2970s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.3000s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.3031s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.3065s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.3097s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.3131s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.3177s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.3178s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.3180s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-
- ************ Frame index 1 : Running float inference **************** 
-
-
- ************ Frame index 2 : Running float inference **************** 
-
-
- ************ Frame index 3 : Running float inference **************** 
-
-
- ************ Frame index 4 : Running float inference **************** 
-
-
- ************ Frame index 5 : Running float inference **************** 
-
-
- ************ Frame index 6 : Running float inference **************** 
-
-
- ************ Frame index 7 : Running float inference **************** 
-
-
- ************ Frame index 8 : Running float inference **************** 
-
-
- ************ Frame index 9 : Running float inference **************** 
-
-
- ************ Frame index 10 : Running float inference **************** 
-
-
- ************ Frame index 11 : Running float inference **************** 
-
-
- ************ Frame index 12 : Running fixed point mode for calibration **************** 
-
-[33m[TIDL Import] [QUANTIZATION] WARNING: Could not open /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float_qparams.prototxt for importing mixed precision info.
-This will be generated after model compilation.[0m
-Parameters unavailable, running calibration
-
--------- Running[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-[34m
-INFO:[33m20250516-140118: import completed 12/16 - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite - 134 sec
-[32m
-
-SUCCESS:[33m20250516-140118: benchmark results - [39m{}
-
- Calibration in Float Mode to Collect Tensor Statistics --------
-
-
------------------ Fixed-point Calibration Iteration [1 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [2 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [3 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [4 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [5 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [6 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [7 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [8 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [9 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [10 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [11 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [12 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
-Parameters unavailable, running calibration
-Output network quant params prototxt file path: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/artifacts/tempDir/201_tidl_net_quant_params.prototxt
-Calibrated quant parameters stored in protoTxt format
-[35;1m==================== [Quantization & Calibration Completed] ====================
-
-[0m[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0mRerunning network compiler...
-[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0m[32;1m======================== Subgraph Compiled Successfully ========================
-
-[0m
- Final number of subgraphs:1 , 81 nodes delegated to accelerator 
-
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 341874733 bytes 
-MEM: Free's : 26 free's  of 341874733 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-140119: starting - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[34m
-INFO:[33m20250516-140120: running - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[34m
-INFO:[33m20250516-140120: pipeline_config - [39m{'task_type': 'segmentation', 'dataset_category': 'ade20k32', 'calibration_dataset': <edgeai_benchmark.datasets.ade20k.ADE20KSegmentation object at 0x7b46563f3d30>, 'input_dataset': <edgeai_benchmark.datasets.ade20k.ADE20KSegmentation object at 0x7b46563f3a00>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563daad0>, 'session': <edgeai_benchmark.sessions.tflitert_session.TFLiteRTSession object at 0x7b46563dab30>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a15a0>, 'model_info': {'metric_reference': {'accuracy_mean_iou%': 54.8}, 'model_shortlist': 10, 'compact_name': 'deeplabv3_mobv2-ade20k32-mlperf-512x512', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-140120: infer 12/16 - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite - this may take some time...
-[34mINFO:[33m20250516-140120: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/segmentation/ade20k32/mlperf/deeplabv3_mnv2_ade20k32_float.tflite
-[34mINFO:[33m20250516-140120: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float.tflite
-[34mINFO:[33m20250516-140120: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite/model/deeplabv3_mnv2_ade20k32_float_qparams.prototxt
-infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|   0%|          || 0/1000 [00:00<?, ?it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|          |     0% 0/1000| [< ]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|   2%|▏         || 18/1000 [00:10<09:35,  1.71it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|   4%|▎         || 36/1000 [00:20<09:13,  1.74it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|   6%|▌         || 56/1000 [00:31<08:39,  1.82it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|   8%|▊         || 76/1000 [00:41<08:15,  1.87it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  10%|▉         || 96/1000 [00:52<08:13,  1.83it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  12%|█▏        || 115/1000 [01:03<08:04,  1.83it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  13%|█▎        || 134/1000 [01:13<07:56,  1.82it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  15%|█▌        || 153/1000 [01:24<07:50,  1.80it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  17%|█▋        || 171/1000 [01:34<07:43,  1.79it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  19%|█▉        || 189/1000 [01:45<07:35,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  21%|██        || 208/1000 [01:55<07:22,  1.79it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  23%|██▎       || 227/1000 [02:06<07:12,  1.79it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  24%|██▍       || 245/1000 [02:16<07:05,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  26%|██▋       || 263/1000 [02:26<06:53,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  28%|██▊       || 281/1000 [02:36<06:44,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  30%|██▉       || 299/1000 [02:46<06:33,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  32%|███▏      || 317/1000 [02:56<06:25,  1.77it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  34%|███▎      || 335/1000 [03:07<06:14,  1.77it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  35%|███▌      || 353/1000 [03:17<06:03,  1.78it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  37%|███▋      || 372/1000 [03:27<05:49,  1.80it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  39%|███▉      || 391/1000 [03:37<05:34,  1.82it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  41%|████      || 411/1000 [03:47<05:15,  1.86it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  43%|████▎     || 431/1000 [03:58<05:02,  1.88it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  45%|████▌     || 451/1000 [04:08<04:49,  1.90it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  47%|████▋     || 471/1000 [04:18<04:37,  1.91it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  49%|████▉     || 491/1000 [04:29<04:25,  1.92it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  51%|█████     || 511/1000 [04:39<04:15,  1.91it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  53%|█████▎    || 531/1000 [04:50<04:04,  1.92it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  55%|█████▌    || 551/1000 [05:00<03:53,  1.93it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  57%|█████▋    || 571/1000 [05:10<03:42,  1.93it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  59%|█████▉    || 591/1000 [05:21<03:31,  1.93it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  61%|██████    || 611/1000 [05:31<03:21,  1.93it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  63%|██████▎   || 631/1000 [05:41<03:10,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  65%|██████▌   || 651/1000 [05:51<02:59,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  67%|██████▋   || 671/1000 [06:02<02:49,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  69%|██████▉   || 691/1000 [06:12<02:38,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  71%|███████   || 711/1000 [06:22<02:29,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  73%|███████▎  || 731/1000 [06:33<02:18,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  75%|███████▌  || 751/1000 [06:43<02:07,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  77%|███████▋  || 771/1000 [06:53<01:57,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  79%|███████▉  || 791/1000 [07:03<01:47,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  81%|████████  || 811/1000 [07:14<01:37,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  83%|████████▎ || 831/1000 [07:24<01:26,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  85%|████████▌ || 851/1000 [07:34<01:16,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  87%|████████▋ || 871/1000 [07:44<01:06,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  89%|████████▉ || 891/1000 [07:55<00:55,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  91%|█████████ || 911/1000 [08:05<00:45,  1.95it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  93%|█████████▎|| 931/1000 [08:15<00:35,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  95%|█████████▌|| 951/1000 [08:26<00:25,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  97%|█████████▋|| 971/1000 [08:36<00:14,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2|  99%|█████████▉|| 991/1000 [08:46<00:04,  1.94it/s]infer 12/16: ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2| 100%|██████████|| 1000/1000 [08:51<00:00,  1.88it/s]
-[34m
-INFO:[33m20250516-141012: infer completed 12/16 - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite - 532 sec
-[32m
-
-SUCCESS:[33m20250516-141015: benchmark results - [39m{'infer_path': 'ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite', 'accuracy_mean_iou%': 36.146143, 'num_subgraphs': 1, 'perfsim_time_ms': 24.11935, 'perfsim_ddr_transfer_mb': 110.66, 'perfsim_gmacs': 5.3385}
-
-
- Number of subgraphs:1 , 81 nodes delegated out of 81 nodes 
- 
-The soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.6s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.8s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.146s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.178s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1537s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1575s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1625s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1662s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1693s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1749s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1779s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1816s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1850s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1883s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1910s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1948s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1989s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.2018s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.2048s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.2086s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.2116s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.2149s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.2179s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.2210s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.2250s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.2279s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.2309s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.2345s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.2374s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.2411s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2438s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2470s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2500s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2526s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2560s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2586s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.2616s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2642s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2670s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2708s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2742s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2743s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2744s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-MEM: Deinit ... !!!
-MEM: Alloc's: 26 alloc's of 90396976 bytes 
-MEM: Free's : 26 free's  of 90396976 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-151147: starting - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[32m
-SUCCESS:[33m20250516-151147: found results - [39m{'infer_path': 'ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite', 'accuracy_mean_iou%': 36.146143, 'num_subgraphs': 1, 'perfsim_time_ms': 24.11935, 'perfsim_ddr_transfer_mb': 110.66, 'perfsim_gmacs': 5.3385}
-
-[34m
-INFO:[33m20250516-151147: starting - [39mss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite
-[32m
-SUCCESS:[33m20250516-151147: found results - [39m{'infer_path': 'ss-2580_tflitert_ade20k32_mlperf_deeplabv3_mnv2_ade20k32_float_tflite', 'accuracy_mean_iou%': 36.146143, 'num_subgraphs': 1, 'perfsim_time_ms': 24.11935, 'perfsim_ddr_transfer_mb': 110.66, 'perfsim_gmacs': 5.3385}
-

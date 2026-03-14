@@ -1,327 +1,0 @@
-[34m
-INFO:[33m20250516-135857: starting - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[34m
-INFO:[33m20250516-135857: running - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[34m
-INFO:[33m20250516-135857: pipeline_config - [39m{'task_type': 'detection', 'dataset_category': 'coco', 'calibration_dataset': <edgeai_benchmark.datasets.coco_det.COCODetection object at 0x7b4656301fc0>, 'input_dataset': <edgeai_benchmark.datasets.coco_det.COCODetection object at 0x7b46b9a268c0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563a2620>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b46563a2680>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a2920>, 'metric': {'label_offset_pred': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10, 10: 11, 11: 13, 12: 14, 13: 15, 14: 16, 15: 17, 16: 18, 17: 19, 18: 20, 19: 21, 20: 22, 21: 23, 22: 24, 23: 25, 24: 27, 25: 28, 26: 31, 27: 32, 28: 33, 29: 34, 30: 35, 31: 36, 32: 37, 33: 38, 34: 39, 35: 40, 36: 41, 37: 42, 38: 43, 39: 44, 40: 46, 41: 47, 42: 48, 43: 49, 44: 50, 45: 51, 46: 52, 47: 53, 48: 54, 49: 55, 50: 56, 51: 57, 52: 58, 53: 59, 54: 60, 55: 61, 56: 62, 57: 63, 58: 64, 59: 65, 60: 67, 61: 70, 62: 72, 63: 73, 64: 74, 65: 75, 66: 76, 67: 77, 68: 78, 69: 79, 70: 80, 71: 81, 72: 82, 73: 84, 74: 85, 75: 86, 76: 87, 77: 88, 78: 89, 79: 90, 80: 91}}, 'model_info': {'metric_reference': {'accuracy_ap[.5:.95]%': 25.1}, 'model_shortlist': 10, 'compact_name': 'ssd-lite-mobv2-mmdet-coco-512x512', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-135857: import 4/16 - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx - this may take some time...
-[34mINFO:[33m20250516-135857: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-[34mINFO:[33m20250516-135857: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-[34mINFO:[33m20250516-135857: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model_qparams.prototxt
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-Downloading 1/1: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-Download done for /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-Converted model is valid!
-[35;1m========================= [Model Compilation Started] =========================
-
-[0mModel compilation will perform the following stages:
-1. Parsing
-2. Graph Optimization
-3. Quantization & Calibration
-4. Memory Planning
-
-[35;1m============================== [Version Summary] ==============================
-
-[0m-------------------------------------------------------------------------------
-|          TIDL Tools Version          |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|         C7x Firmware Version         |              [32;1m11_00_00_00[0m             |
--------------------------------------------------------------------------------
-|            Runtime Version           |                [32;1m1.15.0[0m                |
--------------------------------------------------------------------------------
-|          Model Opset Version         |                  [32;1m11[0m                  |
--------------------------------------------------------------------------------
-
-[35;1m============================== [Parsing Started] ==============================
-
-[0mssd is meta arch name 
-
-Number of OD backbone nodes = 150 
-Size of odBackboneNodeIds = 150 
-
-------------------------- Subgraph Information Summary -------------------------
--------------------------------------------------------------------------------
-|          Core           |      No. of Nodes       |   Number of Subgraphs   |
--------------------------------------------------------------------------------
-| C7x                     |                     469 |                       1 |
-| CPU                     |                       0 |                       x |
--------------------------------------------------------------------------------
-[35;1m============================= [Parsing Completed] =============================
-
-[0mTIDL Meta pipeLine (proto) file  : /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model.prototxt  
-ssd
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[33m[TIDL Import]  WARNING: Image dimensions is not provided, Please provide it as part of prior_box_param in form of either (img_w & img_h) or img_size. Proceeding with img_w = 512 and img_h = 512 in prior box decoding[0m
-[35;1m==================== [Optimization for subgraph_0 Started] ====================
-
-[0m[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
-[33m[TIDL Import] [PARSER] WARNING: Requested output data convert layer is not added to the network, It is currently not optimal[0m
------------------------------ Optimization Summary -----------------------------
--------------------------------------------------------------------------------------
-|            Layer           | Nodes before optimization | Nodes after optimization |
--------------------------------------------------------------------------------------
-| TIDL_OdOutputReformatLayer |                         0 |                        2 |
-| TIDL_DetectionOutputLayer  |                         0 |                        1 |
-| TIDL_BatchNormLayer        |                         0 |                        1 |
-| TIDL_ReLULayer             |                        54 |                        [32;1m0[0m |
-| TIDL_ConvolutionLayer      |                        83 |                       83 |
-| TIDL_EltWiseLayer          |                        12 |                       [32;1m10[0m |
-| TIDL_PatchMergeLayer       |                         1 |                        [32;1m0[0m |
--------------------------------------------------------------------------------------
-
-[35;1m=================== [Optimization for subgraph_0 Completed] ===================
-
-[0mThe soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.142s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.166s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1170s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1202s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1241s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1272s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1299s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1335s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1363s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1391s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1417s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1456s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1486s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1518s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1559s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1587s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1613s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1646s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1674s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1705s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1734s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1762s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.1793s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.1822s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.1856s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.1897s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.1925s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.1968s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.1995s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2023s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2050s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2081s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2109s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2140s:  VX_ZONE_INFO: [tivxPlatformCre[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %[======>                                                                      ] 8 %[============>                                                                ] 16 %[===================>                                                         ] 25 %[=========================>                                                   ] 33 %[================================>                                            ] 41 %[======================================>                                      ] 50 %[============================================>                                ] 58 %[===================================================>                         ] 66 %[=========================================================>                   ] 75 %[================================================================>            ] 83 %[======================================================================>      ] 91 %[=============================================================================] 100 %------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-------------------------- Network Compiler Traces ------------------------------
-Successful Memory Allocation
-Successful Workload Creation
-[34m
-INFO:[33m20250516-140155: import completed 4/16 - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx - 178 sec
-[32m
-
-SUCCESS:[33m20250516-140155: benchmark results - [39m{}
-
-ateTargetId:169] Added target CSITX 
- 0.2195s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2225s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2251s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2283s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2317s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2319s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2321s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-[35;1m============= [Quantization & Calibration for subgraph_0 Started] =============
-
-[0m[33m[TIDL Import] [QUANTIZATION] WARNING: Could not open /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model_qparams.prototxt for importing mixed precision info.
-This will be generated after model compilation.[0m
-Parameters unavailable, running calibration
-
--------- Running Calibration in Float Mode to Collect Tensor Statistics --------
-
-
------------------ Fixed-point Calibration Iteration [1 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [2 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [3 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [4 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [5 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [6 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [7 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [8 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [9 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [10 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [11 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
------------------ Fixed-point Calibration Iteration [12 / 12]: -----------------
-Parameters unavailable, running calibration
-
-
-Parameters unavailable, running calibration
-Output network quant params prototxt file path: /data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/artifacts/tempDir/subgraph_0_tidl_net_quant_params.prototxt
-Calibrated quant parameters stored in protoTxt format
-[35;1m==================== [Quantization & Calibration Completed] ====================
-
-[0m[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0mRerunning network compiler...
-[35;1m========================== [Memory Planning Started] ==========================
-
-[0m
-
-[35;1m========================= [Memory Planning Completed] =========================
-
-[0m[32;1m======================== Subgraph Compiled Successfully ========================
-
-[0m
-
-MEM: Deinit ... !!!
-MEM: Alloc's: 27 alloc's of 210614645 bytes 
-MEM: Free's : 27 free's  of 210614645 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-140156: starting - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[34m
-INFO:[33m20250516-140156: running - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[34m
-INFO:[33m20250516-140156: pipeline_config - [39m{'task_type': 'detection', 'dataset_category': 'coco', 'calibration_dataset': <edgeai_benchmark.datasets.coco_det.COCODetection object at 0x7b4656301fc0>, 'input_dataset': <edgeai_benchmark.datasets.coco_det.COCODetection object at 0x7b46b9a268c0>, 'preprocess': <edgeai_benchmark.preprocess.PreProcessTransforms object at 0x7b46563a2620>, 'session': <edgeai_benchmark.sessions.onnxrt_session.ONNXRTSession object at 0x7b46563a2680>, 'postprocess': <edgeai_benchmark.postprocess.PostProcessTransforms object at 0x7b46563a2920>, 'metric': {'label_offset_pred': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10, 10: 11, 11: 13, 12: 14, 13: 15, 14: 16, 15: 17, 16: 18, 17: 19, 18: 20, 19: 21, 20: 22, 21: 23, 22: 24, 23: 25, 24: 27, 25: 28, 26: 31, 27: 32, 28: 33, 29: 34, 30: 35, 31: 36, 32: 37, 33: 38, 34: 39, 35: 40, 36: 41, 37: 42, 38: 43, 39: 44, 40: 46, 41: 47, 42: 48, 43: 49, 44: 50, 45: 51, 46: 52, 47: 53, 48: 54, 49: 55, 50: 56, 51: 57, 52: 58, 53: 59, 54: 60, 55: 61, 56: 62, 57: 63, 58: 64, 59: 65, 60: 67, 61: 70, 62: 72, 63: 73, 64: 74, 65: 75, 66: 76, 67: 77, 68: 78, 69: 79, 70: 80, 71: 81, 72: 82, 73: 84, 74: 85, 75: 86, 76: 87, 77: 88, 78: 89, 79: 90, 80: 91}}, 'model_info': {'metric_reference': {'accuracy_ap[.5:.95]%': 25.1}, 'model_shortlist': 10, 'compact_name': 'ssd-lite-mobv2-mmdet-coco-512x512', 'shortlisted': True, 'recommended': True}}
-[34m
-INFO:[33m20250516-140156: infer 4/16 - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx - this may take some time...
-[34mINFO:[33m20250516-140156: model_path - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-[34mINFO:[33m20250516-140156: model_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model.onnx
-[34mINFO:[33m20250516-140156: quant_file - [39m/data/ssd/files/a0393608/work/code/ti/edgeai-algo/edgeai-benchmark/work_dirs/modelartifacts/AM67A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx/model/ssd_mobilenetv2_lite_512x512_20201214_model_qparams.prototxt
-infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   0%|          || 0/1000 [00:00<?, ?it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|          |     0% 0/1000| [< ]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   1%|          || 12/1000 [00:10<14:35,  1.13it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   2%|▏         || 24/1000 [00:21<14:17,  1.14it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   4%|▎         || 37/1000 [00:31<13:32,  1.18it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   5%|▌         || 50/1000 [00:42<13:26,  1.18it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   6%|▌         || 62/1000 [00:53<13:20,  1.17it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   7%|▋         || 74/1000 [01:03<13:18,  1.16it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|   9%|▊         || 86/1000 [01:14<13:31,  1.13it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  10%|▉         || 99/1000 [01:25<12:58,  1.16it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  11%|█         || 112/1000 [01:36<12:40,  1.17it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  12%|█▏        || 124/1000 [01:48<12:59,  1.12it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  14%|█▎        || 136/1000 [01:58<12:41,  1.13it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  15%|█▍        || 149/1000 [02:09<12:20,  1.15it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  16%|█▋        || 163/1000 [02:19<11:28,  1.22it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  18%|█▊        || 177/1000 [02:30<11:06,  1.23it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  19%|█▉        || 191/1000 [02:41<10:47,  1.25it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  20%|██        || 204/1000 [02:51<10:38,  1.25it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  22%|██▏       || 218/1000 [03:02<10:22,  1.26it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  23%|██▎       || 232/1000 [03:13<10:03,  1.27it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  25%|██▍       || 246/1000 [03:24<09:43,  1.29it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  26%|██▌       || 261/1000 [03:34<09:15,  1.33it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  28%|██▊       || 276/1000 [03:46<09:10,  1.31it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  29%|██▉       || 290/1000 [03:56<08:50,  1.34it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  30%|███       || 304/1000 [04:07<08:45,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  32%|███▏      || 318/1000 [04:17<08:30,  1.34it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  33%|███▎      || 332/1000 [04:28<08:27,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  35%|███▍      || 346/1000 [04:38<08:11,  1.33it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  36%|███▌      || 360/1000 [04:50<08:13,  1.30it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  37%|███▋      || 374/1000 [05:00<07:55,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  39%|███▉      || 389/1000 [05:10<07:34,  1.34it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  40%|████      || 404/1000 [05:22<07:26,  1.33it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  42%|████▏     || 418/1000 [05:32<07:12,  1.35it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  43%|████▎     || 432/1000 [05:44<07:14,  1.31it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  45%|████▍     || 446/1000 [05:54<06:59,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  46%|████▌     || 460/1000 [06:04<06:47,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  47%|████▋     || 474/1000 [06:14<06:31,  1.35it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  49%|████▉     || 489/1000 [06:25<06:15,  1.36it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  50%|█████     || 503/1000 [06:35<06:03,  1.37it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  52%|█████▏    || 517/1000 [06:46<05:54,  1.36it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  53%|█████▎    || 532/1000 [06:56<05:37,  1.39it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  55%|█████▍    || 547/1000 [07:07<05:27,  1.38it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  56%|█████▌    || 561/1000 [07:17<05:21,  1.37it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  57%|█████▊    || 575/1000 [07:28<05:12,  1.36it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  59%|█████▉    || 589/1000 [07:39<05:07,  1.34it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  60%|██████    || 602/1000 [07:49<05:00,  1.32it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  62%|██████▏   || 617/1000 [08:00<04:46,  1.34it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  63%|██████▎   || 631/1000 [08:11<04:37,  1.33it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  65%|██████▍   || 646/1000 [08:21<04:18,  1.37it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  66%|██████▋   || 663/1000 [08:31<03:52,  1.45it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  68%|██████▊   || 680/1000 [08:43<03:42,  1.44it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  70%|██████▉   || 695/1000 [08:53<03:31,  1.44it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  71%|███████   || 710/1000 [09:05<03:27,  1.40it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  72%|███████▎  || 725/1000 [09:16<03:16,  1.40it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  74%|███████▍  || 741/1000 [09:26<02:57,  1.46it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  76%|███████▌  || 758/1000 [09:36<02:40,  1.51it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  78%|███████▊  || 775/1000 [09:47<02:27,  1.52it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  79%|███████▉  || 791/1000 [09:57<02:15,  1.54it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  81%|████████  || 808/1000 [10:08<02:02,  1.56it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  82%|████████▎ || 825/1000 [10:19<01:53,  1.55it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  84%|████████▍ || 841/1000 [10:29<01:42,  1.55it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  86%|████████▌ || 858/1000 [10:40<01:30,  1.57it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  88%|████████▊ || 875/1000 [10:50<01:18,  1.59it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  89%|████████▉ || 892/1000 [11:00<01:06,  1.62it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  91%|█████████ || 909/1000 [11:11<00:56,  1.61it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  93%|█████████▎|| 926/1000 [11:21<00:45,  1.61it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  94%|█████████▍|| 943/1000 [11:32<00:35,  1.62it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  96%|█████████▌|| 960/1000 [11:42<00:24,  1.62it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  98%|█████████▊|| 977/1000 [11:54<00:14,  1.57it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2|  99%|█████████▉|| 994/1000 [12:04<00:03,  1.59it/s]infer 4/16: od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2| 100%|██████████|| 1000/1000 [12:08<00:00,  1.37it/s]
-[34m
-INFO:[33m20250516-141405: infer completed 4/16 - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx - 729 sec
-Loading and preparing results...
-DONE (t=0.02s)
-creating index...
-index created!
-Running per image evaluation...
-Evaluate annotation type *bbox*
-DONE (t=1.82s).
-Accumulating evaluation results...
-DONE (t=0.72s).
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.203
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.325
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.220
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.027
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.201
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.377
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.184
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.239
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.243
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.035
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.233
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.443
-[32m
-
-SUCCESS:[33m20250516-141408: benchmark results - [39m{'infer_path': 'od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx', 'accuracy_ap[.5:.95]%': 20.338176, 'accuracy_ap50%': 32.452879, 'num_subgraphs': 1, 'perfsim_time_ms': 8.8953, 'perfsim_ddr_transfer_mb': 38.1, 'perfsim_gmacs': 1.5751}
-
-libtidl_onnxrt_EP loaded 0x64b122f9c480 
-Final number of subgraphs created are : 1, - Offloaded Nodes - 469, Total Nodes - 469 
-The soft limit is 10240
-The hard limit is 10240
-MEM: Init ... !!!
-MEM: Init ... Done !!!
- 0.0s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_INFO
- 0.4s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_ERROR
- 0.5s:  VX_ZONE_INFO: Globally Enabled VX_ZONE_WARNING
- 0.113s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-1
- 0.131s:  VX_ZONE_INFO: [ownAddTargetKernelInternal:189] registered kernel vx_tutorial_graph.phase_rgb on target DSP_C7-2
- 0.1100s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-0 
- 0.1147s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-1 
- 0.1190s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-2 
- 0.1222s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MPU-3 
- 0.1331s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1 
- 0.1365s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_2 
- 0.1401s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_3 
- 0.1441s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_4 
- 0.1469s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_5 
- 0.1502s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_6 
- 0.1529s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_7 
- 0.1562s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-1_PRI_8 
- 0.1594s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2 
- 0.1622s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_2 
- 0.1651s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_3 
- 0.1682s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_4 
- 0.1712s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_5 
- 0.1746s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_6 
- 0.1773s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_7 
- 0.1808s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DSP_C7-2_PRI_8 
- 0.1840s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU2-0 
- 0.1874s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_LDC1 
- 0.1902s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC1 
- 0.1933s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_MSC2 
- 0.1958s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_VISS1 
- 0.1994s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE1 
- 0.2022s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE2 
- 0.2052s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE3 
- 0.2077s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CAPTURE4 
- 0.2106s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY1 
- 0.2131s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DISPLAY2 
- 0.2164s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX 
- 0.2189s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target CSITX2 
- 0.2217s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_SDE 
- 0.2244s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target DMPAC_DOF 
- 0.2281s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target VPAC_FC 
- 0.2319s:  VX_ZONE_INFO: [tivxPlatformCreateTargetId:169] Added target MCU1-0 
- 0.2321s:  VX_ZONE_INFO: [tivxInit:152] Initialization Done !!!
- 0.2323s:  VX_ZONE_INFO: Globally Disabled VX_ZONE_INFO
-MEM: Deinit ... !!!
-MEM: Alloc's: 27 alloc's of 83769808 bytes 
-MEM: Free's : 27 free's  of 83769808 bytes 
-MEM: Open's : 0 allocs  of 0 bytes 
-MEM: Deinit ... Done !!!
-[34m
-INFO:[33m20250516-151143: starting - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[32m
-SUCCESS:[33m20250516-151143: found results - [39m{'infer_path': 'od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx', 'accuracy_ap[.5:.95]%': 20.338176, 'accuracy_ap50%': 32.452879, 'num_subgraphs': 1, 'perfsim_time_ms': 8.8953, 'perfsim_ddr_transfer_mb': 38.1, 'perfsim_gmacs': 1.5751}
-
-[34m
-INFO:[33m20250516-151143: starting - [39mod-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx
-[32m
-SUCCESS:[33m20250516-151143: found results - [39m{'infer_path': 'od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx', 'accuracy_ap[.5:.95]%': 20.338176, 'accuracy_ap50%': 32.452879, 'num_subgraphs': 1, 'perfsim_time_ms': 8.8953, 'perfsim_ddr_transfer_mb': 38.1, 'perfsim_gmacs': 1.5751}
-
