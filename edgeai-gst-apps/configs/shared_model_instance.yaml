@@ -8,8 +8,8 @@ inputs:
         height: 720
         framerate: 30
     input1:
-        source: /opt/edgeai-test-data/videos/video0_1280_768.h264
-        format: h264
+        source: /opt/edgeai-test-data/videos/video0_1280_768.h265
+        format: h265
         width: 1280
         height: 768
         framerate: 30
@@ -49,7 +49,7 @@ outputs:
         overlay-perf-type: graph
 
 flows:
-    flow0: [input0,model0,output0,[320,180,640,360]]
-    flow1: [input0,model0,output0,[960,180,640,360]]
-    flow2: [input1,model0,output0,[320,560,640,360]]
-    flow3: [input1,model0,output0,[960,560,640,360]]
+    flow0: [input0,model0,output1,[320,180,640,360]]
+    flow1: [input0,model0,output1,[960,180,640,360]]
+    flow2: [input1,model0,output1,[320,560,640,360]]
+    flow3: [input1,model0,output1,[960,560,640,360]]

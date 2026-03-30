@@ -19,7 +19,7 @@ inputs:
     #
     #ex:- ../c/d/input_image%02d.jpg
     #     /a/b/c/d/input_image%02d.png
-    #     /a/b/c/d/input_video.h264
+    #     /a/b/c/d/input_video.h265
     #     /a/b/c/d/input_video.mp4
     #     /a/b/c/d/input_video.mov
     #
@@ -60,14 +60,14 @@ inputs:
 
     input1:
         # Raw Video Source
-        source: /opt/edgeai-test-data/videos/video0_1280_768.h264
+        source: /opt/edgeai-test-data/videos/video0_1280_768.h265
 
         # Video encoding format (optional)
         # Allowed values
         # - h264 - Uses 264 decoder for h264 videos
         # - h265 - Uses 265 decoder for h265 videos
         # - auto - to let gstreamer figure out (default)
-        format: h264
+        format: h265
 
         # Input data width
         width: 1280
@@ -91,7 +91,7 @@ inputs:
         # - h264 - Uses 264 decoder
         # - h265 - Uses 265 decoder
         # - auto - to let gstreamer figure out (default)
-        format: h264
+        format: h265
 
         # Input data width
         width: 1280

@@ -44,5 +44,5 @@ outputs:
         overlay-perf-type: graph
 
 flows:
-    flow0: [input0,model0,output0,[320,150,1280,720]]
+    flow0: [input0,model0,output1,[320,150,1280,720]]
         
